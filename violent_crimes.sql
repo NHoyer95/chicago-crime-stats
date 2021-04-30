@@ -1,4 +1,4 @@
-drop table violent_crimes_db;
+drop table violent_crimes;
 
 create table violent_crimes (
 	id serial primary key,
