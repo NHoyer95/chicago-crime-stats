@@ -262,7 +262,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(/crimeProject/static/images/chicago1.jpg);
+    background-image: url(../images/chicago1.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
