@@ -28,31 +28,65 @@ $('.navbar-collapse ul li a').click(function() {
 // Query the endpoint that returns a JSON ...
 d3.json("/dictionary").then(function (data) {
 
-    // ... and dump that JSON to the console for inspection
-    console.log(data); 
-
-    // Next, pull out the keys and the values for graphing
-    keys = Object.keys(data);
-    values = Object.values(data);
-
-    // Create the trace
-    var trace = {
-        x: keys,
-        y: values,
-        type: "bar"
-    };
-
-    // Put the trace into an array (which allows us to graph
-    // multiple traces, if we wish)
-    var data = [trace];
-
-    // Define a layout object
-    var layout = {
-        title: "'Bar' Chart",
-        xaxis: { title: "Drinks"},
-        yaxis: { title: "Rating"}
-    };
+  
 
     // Create the plot
     Plotly.newPlot("plot", data, layout); 
 });
+
+
+
+//  graph 1
+function crimeCalendar(data) {
+    // console.log(`crimeCalendar(${data})`);
+
+    
+};
+
+//  graph 2
+function arrestChart(data) {
+    // console.log(`arrestChart(${data})`);
+
+    
+};
+
+// Show map
+function crimeMap(data) {
+    // console.log(`crimeMap(${data})`);
+
+    
+};
+
+// Show Meta Data
+function showData(data) {
+    // console.log(`showData(${data})`);
+
+    
+};
+
+
+// Event Handler - place holder
+function optionChanged(data) {
+    // console.log(`User selected ${data}`);
+
+    crimeCalendar(data);
+    arrestChart(data);
+    crimeMap(data);
+    showData(data);
+
+}
+
+// Calling all the function 
+// place holders for the graphs or charts we want to create
+function InitDashboard() {
+    // console.log("InitDashboard()");
+
+    //Draw the graphs/charts
+    crimeCalendar();
+    arrestChart();
+    crimeMap();
+    showData();
+    
+}
+
+InitDashboard();
