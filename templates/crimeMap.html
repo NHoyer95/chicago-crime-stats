@@ -7,20 +7,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="../static/js/main.js"></script>
+ 
+
+
+  <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-      <!-- jQuery Version 1.11.0 -->
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script>
 
-      <!-- Bootstrap Core JavaScript -->
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script>
-  
-      <!-- Plugin JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/classie.js"></script>
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script>
+  <!-- jQuery Version 1.11.0 -->
+  <!-- <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script> -->
+
+  <!-- Bootstrap Core JavaScript -->
+  <!-- <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script> -->
+
+  <!-- Plugin JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/classie.js"></script>
+  <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script> -->
+
+
 </head>
-
+<body>
     <!-- Navigation- this uses bootstrap -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
@@ -50,7 +56,7 @@
                       <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a href="/templates/arrestChart.html">Arrests</a></li>
-                        <li><a href="/templates/crimeChart.html">Overall Crime</a></li>
+                        <li><a href="/templates/crimeMap.html">Overall Crime</a></li>
                         <li><a href="/templates/viz3.html">Laura TBD</a></li>
                       </ul>
                     </li>                                                       
@@ -67,11 +73,8 @@
       <div class="col-sm-12 border">
         <h3>Crime Map</h3>
         <hr>
-          <div> 
-
-          <!-- !!!YOUR CODE GOES HERE!!! -->
-
-          </div>
+         <!-- The div that holds our map -->
+        <div id="map-id"></div>
         <p>This will contain the viz blurb. Tell what were looking at</p>
       </div>
     </div>
@@ -79,8 +82,31 @@
 
    <!-- YOUR CODE ENDS HERE -->
 
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- MomentJS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+
+  <!-- Icons -->
+  <!-- <script src="static/js/leaflet.extra-markers.min.js"></script> -->
 
 
+<!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+<!-- API Key -->
+<script type="text/javascript" src="../static/js/config.js"></script>
+
+<!-- Our crimeMap JavaScript -->
+<script src="../static/js/crimeMap.js"></script>
+
+</body>
     <!--footer section-->
 <footer>
   <div class="footer">Copyright &copy; Chicago Crime Report 2021</div>
