@@ -25,17 +25,17 @@ $('.navbar-collapse ul li a').click(function() {
 
 // Dom Example for place holder for charts and table
 // Query the endpoint that returns a JSON ...
-d3.json("/crimeMap").then(function (data) {
-    console.log(data)
+// d3.json("/crimeMap").then(function (data) {
+//     console.log(data)
  
    
-});
+// });
 
-d3.json("/crimeData").then(function (data) {
-    console.log(data)
+// d3.json("/crimeData").then(function (data) {
+//     console.log(data)
  
    
-});
+// });
 
 
 // //  graph 1
