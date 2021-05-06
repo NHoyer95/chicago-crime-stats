@@ -48,19 +48,25 @@ def IndexRoute():
 #     #webpage = render_template("other.html", title_we_want="Shirley")
 #     return webpage
 
-# @app.route("/arrestChart")
-# def arrestChartPage():
+@app.route("/arrestChart")
+def arrestChartPage():
     
+    # Open a session, run the query, and then close the session again
+    session = Session(engine)
+    results = session.query(violent_crimes.id, violent_crimes.primary_type, violent_crimes.arrest).all()
+    session.close()
 
-#     # Open a session, run the query, and then close the session again
-#     session = Session(engine)
-#     results = session.query(table.country, table.iso3, table.fighteraircraft).all()
-#     session.close()
+    arrest_chart_data = []
+        
+    for id, primary_type, arrest in results: 
+        dict = {}
+        dict ["id"] = id
+        dict ["primary_type"] = primary_type
+        dict ["arrest"] = arrest
+        arrest_chart_data.append(dict)
 
-  
-
-#     # Return the jsonified result. 
-#     return 
+    # Return the jsonified result. 
+    return jsonify(arrest_chart_data)
 
 @app.route("/crimeMap")
 def crimeMapPage():
