@@ -1,7 +1,7 @@
 // Show that we've loaded the JavaScript file
 console.log("Loaded main.js");
 
-//add notes here
+//HTML
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -30,6 +30,7 @@ d3.json("/crimeMap").then(function (data) {
  
    
 });
+
 d3.json("/crimeData").then(function (data) {
     console.log(data)
  
