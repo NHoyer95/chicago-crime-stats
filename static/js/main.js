@@ -1,7 +1,7 @@
 // Show that we've loaded the JavaScript file
 console.log("Loaded main.js");
 
-//HTML
+//add notes here
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -23,72 +23,26 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 
-// Dom Example for place holder for charts and table
-// Query the endpoint that returns a JSON ...
-d3.json("/crimeMap").then(function (data) {
-    console.log(data)
- 
-   
+// show meta data
+d3.json("/showData", function (data) {
+    console.log(data);
+
+    // reference the tbody section where the table data will go 
+    var tbody = d3.select("tbody");
+
+    data.forEach(crimeRow => {
+        // add a new roaw for each entry
+        var newRow = tbody.append("tr");
+
+        Object.entries(crimeRow).forEach(function([key, value]){
+            console.log(key,value);
+
+            // add these to the table
+            var newCell = newRow.append("td");
+            newCell.text(value);
+        })
+    })
+    
+
 });
 
-d3.json("/crimeData").then(function (data) {
-    console.log(data)
- 
-   
-});
-
-
-// //  graph 1
-// function crimeCalendar(data) {
-//     // console.log(`crimeCalendar(${data})`);
-
-    
-// };
-
-// //  graph 2
-// function arrestChart(data) {
-//     // console.log(`arrestChart(${data})`);
-
-    
-// };
-
-// // Show map
-// function crimeMap(data) {
-//     // console.log(`crimeMap(${data})`);
-
-    
-// };
-
-// // Show Meta Data
-// // function showData(data) {
-// //     // console.log(`showData(${data})`);
-
-    
-// // };
-
-
-// // Event Handler - place holder
-// function optionChanged(data) {
-//     // console.log(`User selected ${data}`);
-
-//     crimeCalendar(data);
-//     arrestChart(data);
-//     crimeMap(data);
-//     showData(data);
-
-// }
-
-// // Calling all the function 
-// // place holders for the graphs or charts we want to create
-// function InitDashboard() {
-//     // console.log("InitDashboard()");
-
-//     //Draw the graphs/charts
-//     crimeCalendar();
-//     arrestChart();
-//     crimeMap();
-//     showData();
-    
-// }
-
-// InitDashboard();

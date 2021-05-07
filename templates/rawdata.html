@@ -4,21 +4,25 @@
   <title>Chicago Crime: Raw Data</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="static/js/js.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
       <!-- jQuery Version 1.11.0 -->
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script>
+      <!--<script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script> -->
 
       <!-- Bootstrap Core JavaScript -->
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script>
+      <!-- <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script> -->
   
       <!-- Plugin JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
       <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/classie.js"></script>
-      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script>
+      <script src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script> -->
 </head>
 
     <!-- Navigation- this uses bootstrap -->
@@ -61,6 +65,8 @@
     </nav>
 
 
+<body>
+
 
    <!-- Team Section- is responsive to rows -will break at 3 in each row -->
    <div class="container">
@@ -68,12 +74,37 @@
       <div class="col-sm-12 border">
         <h3>Raw Data</h3>
         <hr>
-        <p>This will contain the viz blurb. Tell what were looking at</p>
+          <!-- This is where the table will go -->
+        <div class="col-md-12">
+          <div id="table-area" class="">
+            <table id="raw-data" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table-head">ID</th>
+                <th class="table-head">Date</th>
+                <th class="table-head">Primary Type</th>
+                <th class="table-head">Description</th>
+                <th class="table-head">Arrest</th>
+                <th class="table-head">Domestic</th>
+                <th class="table-head">District</th>
+                <th class="table-head">Year</th>
+                <th class="table-head">Latitude</th>
+                <th class="table-head">Longitude</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyid"></tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
 
+
+
+  <script type="text/javascript" src="/static/js/main.js"></script>
+</body>
     <!--footer section-->
 <footer>
   <div class="footer">Copyright &copy; Chicago Crime Report 2021</div>

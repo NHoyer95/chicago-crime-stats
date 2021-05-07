@@ -25,6 +25,7 @@ violent_crimes = base.classes.violent_crimes
 # Instantiate the Flask application. (Chocolate cake recipe.)
 # This statement is required for Flask to do its job. 
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False # so the json does not order the jsonified list
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Effectively disables page caching
 
 # Here's where we define the various application routes ...
@@ -103,8 +104,9 @@ def crimeData():
     #CREATE A LIST OF DICTIONRARIES
     all_crime_data = []
     
+    # ONLY GETTING THE FIRST 100 ROWS OF DATA
     #Create a list of dictionaries, with each dictionary containing one row from the query
-    for id, date, primary_type, description, arrest, domestic, district, year, latitude, longitude in results: 
+    for id, date, primary_type, description, arrest, domestic, district, year, latitude, longitude in results[:100]: 
         dict = {}
         dict ["id"] = id
         dict ["date"] = date
@@ -117,9 +119,13 @@ def crimeData():
         dict ["latitude"] = latitude
         dict ["longitude"] = longitude
         all_crime_data.append(dict)
-
-    # Return jsonified results
+    
     return jsonify(all_crime_data)
+
+@app.route("/showDataPage")
+def showDataPage():
+    webpage = render_template("rawdata.html")
+    return webpage
 
 
 # This statement is required for Flask to do its job. 
