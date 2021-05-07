@@ -26,8 +26,7 @@ $('.navbar-collapse ul li a').click(function() {
 // show meta data
 d3.json("/showData", function (data) {
     console.log(data);
-
-    // reference the tbody section where the table data will go 
+      // reference the tbody section where the table data will go 
     var tbody = d3.select("tbody");
 
     data.forEach(crimeRow => {
@@ -40,9 +39,40 @@ d3.json("/showData", function (data) {
             // add these to the table
             var newCell = newRow.append("td");
             newCell.text(value);
+                  
         })
-    })
+  })
     
+
+// Dom Example for place holder for charts and table
+// Query the endpoint that returns a JSON ...
+// d3.json("/crimeMap").then(function (data) {
+//     console.log(data)
+ 
+   
+// });
+
+// d3.json("/crimeData").then(function (data) {
+//     console.log(data)
+ 
+   
+// });
+
+
+// //  graph 1
+// function crimeCalendar(data) {
+//     // console.log(`crimeCalendar(${data})`);
+
+    
+// };
+
+// //  graph 2
+// function arrestChart(data) {
+//     // console.log(`arrestChart(${data})`);
+
+    
+// };
+
 
 });
 

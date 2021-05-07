@@ -49,8 +49,8 @@ def IndexRoute():
 #     #webpage = render_template("other.html", title_we_want="Shirley")
 #     return webpage
 
-@app.route("/arrestChart")
-def arrestChartPage():
+@app.route("/arrestChartData")
+def arrestChartData():
     
     # Open a session, run the query, and then close the session again
     session = Session(engine)
@@ -68,6 +68,13 @@ def arrestChartPage():
 
     # Return the jsonified result. 
     return jsonify(arrest_chart_data)
+
+
+# Everyone will need one of these! View the console for data being returned here! Live server will not return your data.
+@app.route("/arrestChartPage")
+def arrestChartRoute():
+    webpage = render_template("arrestChart.html")
+    return webpage
 
 @app.route("/crimeMap")
 def crimeMapPage():
