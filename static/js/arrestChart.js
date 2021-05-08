@@ -1,5 +1,6 @@
 console.log("arrestChart.js loaded");
 
+function DrawArrestChart()
 d3.json("/arrestChartData", function (data) {
 
     // ... and dump that JSON to the console for inspection
@@ -10,7 +11,7 @@ d3.json("/arrestChartData", function (data) {
     //     return rows.map(function(row) {return row[key]})
     //   }
       
-    //     var data = [{
+    //     var chartData = [{
     //           type: "sunburst",
     //           maxdepth: 2,
     //           ids: unpack(rows, 'ids'),
