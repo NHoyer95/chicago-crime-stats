@@ -29,7 +29,7 @@ app.config['JSON_SORT_KEYS'] = False # so the json does not order the jsonified 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Effectively disables page caching
 
 # Here's where we define the various application routes ...
-@app.route("/home")
+@app.route("/")
 def IndexRoute():
     ''' This function runs when the browser loads the index route. 
         Note that the html file must be located in a folder called templates. '''
@@ -78,26 +78,11 @@ def arrestChartRoute():
 
 @app.route("/crimeMap")
 def crimeMapPage():
-
-    # Open a session, run the query, and then close the session again
-    session = Session(engine)
-    results = session.query(violent_crimes.id, violent_crimes.date, violent_crimes.primary_type, violent_crimes.description, violent_crimes.arrest, violent_crimes.domestic,violent_crimes.district, violent_crimes.year, violent_crimes.latitude, violent_crimes.longitude).all()
-    session.close()
-
-    #Create a list of dictionaries, with each dictionary containing one row from the query
-    map_all_crime_data = []
+    webpage = render_template("crimeMap.html")
+  
     
-    for primary_type, arrest, district, latitude, longitude in results: 
-        dict = {}
-        dict ["primary_type"] = primary_type
-        dict ["arrest"] = arrest
-        dict ["district"] = district
-        dict ["latitude"] = latitude
-        dict ["longitude"] = longitude
-        map_all_crime_data.append(dict)
-
-    # Return jsonified results
-    return jsonify(map_all_crime_data)
+    return webpage
+    
 
 
 @app.route("/showData")
