@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template 
 from flask import jsonify
 from config import username, password
+import pandas as pd
 
 # Import the functions we need from SQL Alchemy
 import sqlalchemy
@@ -80,8 +81,13 @@ def arrestChartData():
         dict ["arrest"] = arrest
         arrest_chart_data.append(dict)
 
+    arrestDF = pd.DataFrame(arrest_chart_data)
+    arrestType = arrestDF.groupby("primary_type")["arrest"].mean()
+    
+
+
     # Return the jsonified result. 
-    return jsonify(arrest_chart_data)
+    return arrestType
 
 
 # Everyone will need one of these! View the console for data being returned here! Live server will not return your data.
