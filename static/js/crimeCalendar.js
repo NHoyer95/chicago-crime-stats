@@ -1,68 +1,72 @@
+//d3.json("/crimeCalendar").then((data) => {console.log(data);});
+
+d3.json("/crimeCalendar", function (data){console.log(data);});
 //define variables
-function createLineGraph(id) {
-    console.log("createLineGraph", id)
-    d3.json("/crimeCalendar").then((data) => {
-    var date = data.date
-    var homicide =
-    var battery = 
-    var assult = 
-    var robbery = 
-    var sex_offense = 
 
-//Display the default plot: Overall violent crime in Chicago
-function init () {
-    var data = [{
-        x: 
-        y: 
-        type: "line"
+// function createLineGraph(id) {
+//     console.log("createLineGraph", id)
+//     d3.json("/crimeCalendar").then((data) => {
+//     var date = data.date
+//     var homicide = 
+//     var battery = 
+//     var assult = 
+//     var robbery = 
+//     var sex_offense = 
 
-    }];
+// //Display the default plot: Overall violent crime in Chicago
+// function init () {
+//     var data = [{
+//         x: "Date",
+//         y: "Crime in Chicago 2021",
+//         type: "line"
 
-    //create layout for line graph
-    var layout = {};
+//     }];
 
-    plotly.newPlot("line", data, layout); 
-}
+//     //create layout for line graph
+//     var layout = {};
 
-function getData() {
-    var dropdownMenu 
+//     plotly.newPlot("line", data, layout); 
+// }
 
-    var data = [];
+// function getData() {
+//     var dropdownMenu 
 
-    if (dataset == 'date') {
-        data = date; 
-    }
+//     var data = [];
 
-    else if (dataset == 'homicide') {
-        data = homicide; 
-    }
+//     if (dataset == 'date') {
+//         data = date; 
+//     }
 
-    else if (dataset == 'battery') {
-        data = battery; 
-    }
+//     else if (dataset == 'homicide') {
+//         data = homicide; 
+//     }
 
-    else if (dataset == 'assult') {
-        data = assult; 
-    }
+//     else if (dataset == 'battery') {
+//         data = battery; 
+//     }
 
-    else if (dataset == 'robbery') {
-        data = robbery; 
-    }
+//     else if (dataset == 'assult') {
+//         data = assult; 
+//     }
 
-    else if (dataset == 'homicide') {
-        data = homicide; 
-    }
+//     else if (dataset == 'robbery') {
+//         data = robbery; 
+//     }
 
-//call function to update the chart
-updatePlotly(data); 
+//     else if (dataset == 'homicide') {
+//         data = homicide; 
+//     }
+
+// //call function to update the chart
+// updatePlotly(data); 
  
-//update the plot values
-function updatePlotly(newdata) {
-	Plotly.restyle(“line”, “values”, [newdata]);
-}
+// //update the plot values
+// function updatePlotly(newdata) {
+// 	Plotly.restyle(“line”, “values”, [newdata]);
+// }
 
 
 
-}
-})
-init ();
+// }
+// })
+// init ();

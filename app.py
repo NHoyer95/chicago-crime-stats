@@ -42,12 +42,12 @@ def crimeCalenderPage():
 
    # Open a session, run the query, and then close the session again
     session = Session(engine)
-    results = session.query(violent_crimes.date, violent_crimes.primary_type).all()     
+    results = session.query(violent_crimes.id, violent_crimes.date, violent_crimes.primary_type).all()     
     session.close()
 
     calendar_data = []
 
-    for id, primary_type, arrest in results:
+    for id, date, primary_type in results:
         dict = {}
         dict ["id"] = id
         dict ["date"] = date
@@ -60,7 +60,7 @@ def crimeCalenderPage():
 #     return webpage
 @app.route("/crimeCalendarPage")
 def crimeCalendarRoute():
-    webpage = render_template("arrestChart.html")
+    webpage = render_template("crimeCalendar.html")
     return webpage
 
 @app.route("/arrestChartData")
