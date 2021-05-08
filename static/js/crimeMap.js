@@ -66,7 +66,28 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 d3.json("/showData").then(function (data) {
-  console.log(data);
+  // console.log(data);
 
+  var heatArray = []
+  
+  for (var i = 0; i < data.length; i++) {
+
+    var lat = data[i].latitude;
+    var lng = data[i].longitude;
+
+    if(typeof lat != 'number' || typeof lng != 'number')
+      continue;
+
+    var location = [lat,lng];
+    //console.log(location);
+
+    heatArray.push(location);
+    //console.log(heatArray);
+  }
+  //console.log(heatArray.map((x, i) => [i, typeof x[0] != 'number' || typeof x[1] != 'number']).filter(x => x[1]).map(x => x[0]));
+  var heat = L.heatLayer(heatArray, {
+    radius: 20,
+    blur: 25,
+  }).addTo(myMap);
 
 });
