@@ -1,10 +1,13 @@
 //define variables
-var date = 
-var homicide =
-var battery = 
-var assult = 
-var robbery = 
-var sex_offense = 
+function createLineGraph(id) {
+    console.log("createLineGraph", id)
+    d3.json("/crimeCalendar").then((data) => {
+    var date = data.date
+    var homicide =
+    var battery = 
+    var assult = 
+    var robbery = 
+    var sex_offense = 
 
 //Display the default plot: Overall violent crime in Chicago
 function init () {
@@ -61,4 +64,5 @@ function updatePlotly(newdata) {
 
 
 }
+})
 init ();
