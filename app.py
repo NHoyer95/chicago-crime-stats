@@ -114,7 +114,6 @@ def crimeData():
 
     #CREATE A LIST OF DICTIONRARIES
     all_crime_data = []
-    
     # ONLY GETTING THE FIRST 100 ROWS OF DATA
     #Create a list of dictionaries, with each dictionary containing one row from the query
     for id, date, primary_type, description, arrest, domestic, district, year, latitude, longitude in results[:100]: 
@@ -131,9 +130,9 @@ def crimeData():
         dict ["longitude"] = longitude
         all_crime_data.append(dict)
 
-    
-    return jsonify(all_crime_data)
 
+    return jsonify(all_crime_data)
+    
 @app.route("/showDataPage")
 def showDataPage():
     webpage = render_template("rawdata.html")
