@@ -50,6 +50,13 @@ function getData() {
         data = homicide; 
     }
 
+//call function to update the chart
+updatePlotly(data); 
+ 
+//update the plot values
+function updatePlotly(newdata) {
+	Plotly.restyle(“line”, “values”, [newdata]);
+}
 
 
 
