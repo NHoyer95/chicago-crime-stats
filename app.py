@@ -37,17 +37,31 @@ def IndexRoute():
     webpage = render_template("index.html")
     return webpage
 
-# @app.route("/crimeCalendar")
-# def crimeCalenderPage():
+@app.route("/crimeCalendar")
+def crimeCalenderPage():
 
-#    # Open a session, run the query, and then close the session again
-#     session = Session(engine)
-#     results = session.query(table.country, table.iso3, table.fighteraircraft).all()
-#     session.close()
+   # Open a session, run the query, and then close the session again
+    session = Session(engine)
+    results = session.query(violent_crimes.date, violent_crimes.primary_type).all()     
+    session.close()
 
+    calendar_data = []
 
-#     #webpage = render_template("other.html", title_we_want="Shirley")
+    for id, primary_type, arrest in results:
+        dict = {}
+        dict ["id"] = id
+        dict ["date"] = date
+        dict ["primary_type"] = primary_type
+        calendar_data.append(dict)
+    
+    # return json
+    return jsonify(calendar_data)
+
 #     return webpage
+@app.route("/crimeCalendarPage")
+def crimeCalendarRoute():
+    webpage = render_template("arrestChart.html")
+    return webpage
 
 @app.route("/arrestChartData")
 def arrestChartData():
