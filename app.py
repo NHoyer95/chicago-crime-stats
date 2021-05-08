@@ -78,8 +78,6 @@ def arrestChartRoute():
 
 @app.route("/crimeMap")
 def crimeMapPage():
-
-
     webpage = render_template("crimeMap.html")
   
     

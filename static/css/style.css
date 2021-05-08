@@ -588,18 +588,10 @@ body {
     */
 
 /* Crime Map Style Starts Here*/
-/* html,
-body
- {
-  height: 600px;
-  width: 800px;
-  padding: 0;
-  margin: 0;
-} */
 #map-id {
-    position: relative;
+    /* position: relative; */
     border: 1px solid black; 
-    height: 50vh;
+    height: 600px;
     width: 100%;    
 
 }

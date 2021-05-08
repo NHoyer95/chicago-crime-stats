@@ -49,8 +49,6 @@ console.log("loading crimeMap.js");
 //   position: "bottomright"
 // });
 
-
-
 /////////////////////
 var myMap = L.map("map-id", {
   center: [41.8781, -87.6298],
