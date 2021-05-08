@@ -12,44 +12,45 @@
 
 </head>
 
-    <!-- Navigation- this uses bootstrap -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
-        <div class="container">
-            <!-- This is where the branding goes/and the hamburger menu is added for responsive design-->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/templates/index.html">Chicago Crime Report</a>            </div>
-   
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">                      
-                     <!-- The Team-->
-                     <li class="">
-                        <a href="/templates/team.html"><span class="glyphicon glyphicon-user"></span> Meet the Team</a>
-                    </li> 
-                    <!-- Raw Data-->
-                    <li class="">
-                    <a href="/templates/rawdata.html"><span class="glyphicon glyphicon-tasks"></span> Raw Data</a>
-                    </li> 
-                    <!-- Dropdown for Viz-->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-signal"></span> Visualizations
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="/templates/arrestChart.html">Arrests</a></li>
-                          <li><a href="/templates/crimeMap.html">Overall Crime</a></li>
-                          <li><a href="/templates/crimeCalendar.html">Crime Calendar</a></li>
-                        </ul>
-                      </li>                                                       
-                </ul>
-            </div>
-        </div>
-
-    </nav>
+        <!-- Navigation- this uses bootstrap -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+          <div class="container">
+              <!-- This is where the branding goes/and the hamburger menu is added for responsive design-->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/">Chicago Crime Report</a>
+              </div>
+     
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">                      
+                       <!-- The Team-->
+                       <li class="">
+                          <a href="/MeetTheTeam"><span class="glyphicon glyphicon-user"></span> Meet the Team</a>
+                      </li> 
+                      <!-- Raw Data-->
+                      <li class="">
+                      <a href="/showDataPage"><span class="glyphicon glyphicon-tasks"></span> Raw Data</a>
+                      </li> 
+                      <!-- Dropdown for Viz-->
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-signal"></span> Visualizations
+                          <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="/crimeMap">Chicago Crime Map</a></li>
+                              <li><a href="/crimeCalendarPage">Crime Calendar</a></li>
+                              <li><a href="/arrestChartPage">Crimes vs. Arrests</a></li>
+                          </ul>
+                        </li>                                                       
+                  </ul>
+              </div>            
+          </div>
+    
+      </nav>
 <body>
    <!-- PLACEHOLDER FOR YOUR VISUALIZATION CODE -->
    <div class="container">

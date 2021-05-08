@@ -42,37 +42,6 @@ d3.json("/showData", function (data) {
                   
         })
   })
-    
-
-// Dom Example for place holder for charts and table
-// Query the endpoint that returns a JSON ...
-// d3.json("/crimeMap").then(function (data) {
-//     console.log(data)
- 
-   
-// });
-
-// d3.json("/crimeData").then(function (data) {
-//     console.log(data)
- 
-   
-// });
-
-
-// //  graph 1
-// function crimeCalendar(data) {
-//     // console.log(`crimeCalendar(${data})`);
-
-    
-// };
-
-// //  graph 2
-// function arrestChart(data) {
-//     // console.log(`arrestChart(${data})`);
-
-    
-// };
-
 
 });
 

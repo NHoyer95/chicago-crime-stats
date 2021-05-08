@@ -38,6 +38,15 @@ def IndexRoute():
     webpage = render_template("index.html")
     return webpage
 
+# Here's where we define the various application routes ...
+@app.route("/MeetTheTeam")
+def TeamRoute():
+    ''' This function runs when the browser loads the index route. 
+        Note that the html file must be located in a folder called templates. '''
+
+    webpage = render_template("team.html")
+    return webpage
+
 @app.route("/crimeCalendar")
 def crimeCalenderPage():
 
