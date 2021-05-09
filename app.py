@@ -90,13 +90,13 @@ def arrestChartData():
         dict ["arrest"] = arrest
         arrest_chart_data.append(dict)
 
-    arrestDF = pd.DataFrame(arrest_chart_data)
-    arrestType = arrestDF.groupby("primary_type")["arrest"].mean()
+    # arrestDF = pd.DataFrame(arrest_chart_data)
+    # arrestType = arrestDF.groupby("primary_type")["arrest"].mean()
     
 
 
     # Return the jsonified result. 
-    return arrestType
+    return jsonify(arrest_chart_data)
 
 
 # Everyone will need one of these! View the console for data being returned here! Live server will not return your data.
