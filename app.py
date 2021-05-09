@@ -38,12 +38,10 @@ def IndexRoute():
     webpage = render_template("index.html")
     return webpage
 
-# Here's where we define the various application routes ...
+# Team page route, populated from the team html page
 @app.route("/MeetTheTeam")
 def TeamRoute():
-    ''' This function runs when the browser loads the index route. 
-        Note that the html file must be located in a folder called templates. '''
-
+    
     webpage = render_template("team.html")
     return webpage
 
@@ -74,6 +72,8 @@ def crimeCalendarRoute():
     webpage = render_template("crimeCalendar.html")
     return webpage
 
+
+# Arrest data route for the sunburst chart
 @app.route("/arrestChartData")
 def arrestChartData():
     
@@ -91,20 +91,17 @@ def arrestChartData():
         dict ["arrest"] = arrest
         arrest_chart_data.append(dict)
 
-    # arrestDF = pd.DataFrame(arrest_chart_data)
-    # arrestType = arrestDF.groupby("primary_type")["arrest"].mean()
-    
-
-
     # Return the jsonified result. 
     return jsonify(arrest_chart_data)
 
 
-# Everyone will need one of these! View the console for data being returned here! Live server will not return your data.
+# Arrest sunburst chart route
 @app.route("/arrestChartPage")
 def arrestChartRoute():
     webpage = render_template("arrestChart.html")
     return webpage
+
+
 
 @app.route("/crimeMap")
 def crimeMapPage():
