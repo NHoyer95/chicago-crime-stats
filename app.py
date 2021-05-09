@@ -63,9 +63,10 @@ def crimeCalenderPage():
         dict ["date"] = date
         dict ["primary_type"] = primary_type
         calendar_data.append(dict)
-    
+
     # return json
     return jsonify(calendar_data)
+
 
 #     return webpage
 @app.route("/crimeCalendarPage")
