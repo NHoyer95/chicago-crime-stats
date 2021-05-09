@@ -1,4 +1,5 @@
-console.log("arrestChart.js loaded");
+// Development for the sunburst chart visualizing the number of each crime type 
+// and the amount of arrests made for each
 
 d3.json("/arrestChartData", function(data){
 console.log(data); 
@@ -18,7 +19,7 @@ function groupBy(list, keyGetter) {
   return map;
 }
 
-
+// GroupBy on primary type
 var primaryTypes = groupBy(data, crime => crime.primary_type);
 
 // Homicide stats
@@ -51,8 +52,7 @@ var numberSO = so.length;
 var numSOArrest = groupBy(so, arrest => arrest.arrest).get(true).length;
 var numSONoArrest = groupBy(so, arrest => arrest.arrest).get(false).length;
 
-console.log(primaryTypes);
-
+// Building the Sunburst
 var arrestSunburst = [{
   type: "sunburst",
   ids: ["Homicide", "Homicide Arrest = True", "Homicide Arrest = False", 
@@ -85,4 +85,6 @@ var layout = {
 };
 
 
-Plotly.newPlot('arrestChart', arrestSunburst, layout)});
+Plotly.newPlot('arrestChart', arrestSunburst, layout)
+
+});
