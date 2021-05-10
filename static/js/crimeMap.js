@@ -296,7 +296,9 @@ function chooseColor(dist_num) {
   case "3":
     return "orange";
   case "4":
-    return "5";
+    return "lightyellow";
+  case "5":
+    return "acidgreen";
   case "6":
     return "purple";
   case "7":
@@ -326,17 +328,19 @@ function chooseColor(dist_num) {
   case "19":
     return "teal";
   case "20":
-    return "white";
+    return "sapphire";
   case "21":
     return "sky";
   case "22":
-    return "grey";
+    return "lightblue";
   case "23":
     return "straw";
   case "24":
     return "silver";
   case "25":
-    return "sapphire";
+    return "white";
+  case "31":
+    return "indigo";
   default:
     return "black";
   }
