@@ -45,7 +45,7 @@ var myMap = L.map("map-id", {
 
 // Only one base layer can be shown at a time
 var baseMaps = {
-  Light: lightmap,
+  // Light: lightmap,
   Dark: darkmap
 };
 
@@ -92,12 +92,6 @@ var overlays = {
 
 // Create a control for our layers, add our overlay layers to it
 L.control.layers(baseMaps, overlays).addTo(myMap);
-
-// Create a legend to display information about our map
-// var info = L.control({
-//   position: "bottomright"
-// });
-
 
 //BATTERY Fillter
 d3.json("/showData").then(function (data) {
@@ -232,7 +226,7 @@ d3.json("/showData").then(function (data) {
 });
 
 
-//icon filters
+ //icon filters
 var blueIcon = new L.Icon({
 	iconUrl: 'img/marker-icon-2x-blue.png',
 	shadowUrl: 'img/marker-shadow.png',
@@ -287,4 +281,5 @@ var violetIcon = new L.Icon({
 	shadowSize: [41, 41]
 });
 
-
+//example
+// L.marker([51.5, -0.09], {icon: greenIcon}).addTo(myMap);
