@@ -74,7 +74,7 @@ d3.json("/showData").then(function (data) {
   var heat = L.heatLayer(heatArray, {
     radius: 20,
     blur: 25,
-  }).addTo(myMap);
+  }).addTo(layers.HeatMap);
 
 });
 
@@ -123,7 +123,7 @@ d3.json("/showData").then(function (data) {
     console.log(location);
       L.marker(location)
       .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
-      .addTo(myMap);
+      .addTo(layers.BATTERY);
   };
 });
 
@@ -147,9 +147,9 @@ d3.json("/showData").then(function (data) {
 
     var location = [lat,lng];
     // console.log(location);
-      // L.marker(location)
-      // .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
-      // .addTo(myMap);
+      L.marker(location)
+      .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+      .addTo(layers.HOMICIDE);
   };
 });
 
@@ -172,9 +172,9 @@ d3.json("/showData").then(function (data) {
 
     var location = [lat,lng];
     // console.log(location);
-      // L.marker(location)
-      // .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
-      // .addTo(myMap);
+      L.marker(location)
+      .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+      .addTo(layers.ASSAULT);
   };
 });
 
@@ -199,9 +199,9 @@ d3.json("/showData").then(function (data) {
 
       var location = [lat,lng];
       // console.log(location);
-        // L.marker(location)
-        // .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
-        // .addTo(myMap);
+        L.marker(location)
+        .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+        .addTo(layers.ROBBERY);
     };
   });
 
@@ -227,7 +227,7 @@ d3.json("/showData").then(function (data) {
     // console.log(location);
       L.marker(location)
       .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
-      .addTo(myMap);
+      .addTo(layers.SEX_OFFENSE);
   };
 });
 
