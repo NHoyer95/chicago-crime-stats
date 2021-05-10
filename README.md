@@ -10,7 +10,7 @@
 2. Create a new db named "chicago_violent_crimes_db" with Postgres as the user
 3. Right-click the new database and open a Query Tool
 4. In the Query Editor, click to the "Open File" button and navigate to the Chicago Crimes Repo in your local drive
-5. Select the **"violent_crimes.sql"** file and run the create statements located in the file to create the required table
+5. Select the **"violent_crimes.sql"** file from the directory "static > sql" and run the create statement located in the file to create the required table
 6. Run the `select * from` statement at the bottom of the SQL query form to ensure that the table has been created and the data types are reflected properly - NOTE: Do not close this pgAdmin session
 
 #### Create the Required DataFrames and Populate the PostgreSQL DB using a Jupyter Notebook
