@@ -80,8 +80,8 @@ var arrestSunburst = [{
 
 var layout = {
   margin: {l: 0, r: 0, b: 40, t: 0},
-  width: 900,
-  height: 900
+  width: 750,
+  height: 750
 };
 
 
