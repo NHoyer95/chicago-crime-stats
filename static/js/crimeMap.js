@@ -183,7 +183,7 @@ d3.json("/showData").then(function (data) {
       var type = crRobbery[i].primary_type
       var district = crRobbery[i].district
       var description = crRobbery[i].description
-      // console.log(type)
+      // console.log(crRobbery.length)
 
       var location = [lat,lng];
       // console.log(location);
@@ -202,6 +202,7 @@ d3.json("/showData").then(function (data) {
   var crSex_offens = data.filter(sex_offenseType);
   // console.log(crSex_offens);
 
+ 
   for (var i = 0; i < crSex_offens.length; i++) {
     // console.log(crRobbery)
     var lat = crSex_offens[i].latitude;
@@ -209,7 +210,9 @@ d3.json("/showData").then(function (data) {
     var type = crSex_offens[i].primary_type
     var district = crSex_offens[i].district
     var description = crSex_offens[i].description
-    // console.log(type)
+    // console.log(crSex_offens.length)
+
+     
 
     var location = [lat,lng];
     // console.log(location);
