@@ -123,25 +123,26 @@ d3.json("/showData").then(function (data) {
   // console.log(crAssault);
 
   function robberyType(robbery) {
+      
     return robbery.primary_type == "ROBBERY"
   }
   var crRobbery = data.filter(robberyType);
-  // console.log(crRobbery);
+  console.log(crRobbery);
 
-    for (var i = 0; i < crBattery.length; i++) {
-      console.log(crRobbery)
-      var lat = data[i].latitude;
-      var lng = data[i].longitude;
-      var type = data[i].primary_type
+    for (var i = 0; i < crRobbery.length; i++) {
+      // console.log(crRobbery)
+      var lat = crRobbery[i].latitude;
+      var lng = crRobbery[i].longitude;
+      var type = crRobbery[i].primary_type
       console.log(type)
 
       var location = [lat,lng];
       // console.log(location);
         L.marker(location)
-        .bindPopup("<h1>" + type + "</h1> ")
+        .bindPopup("<h3>" + type +  "</h3> <hr> <h5>Coord " + location + "</h5>")
         .addTo(myMap);
 
-    }
+    };
 
 
   function sex_offenseType(sex_offense) {
