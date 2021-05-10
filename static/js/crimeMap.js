@@ -34,13 +34,8 @@ var myMap = L.map("map-id", {
   center: [41.8781, -87.6298],
   zoom: 13,
   layers: [
-    layers.BATTERY,
-    layers.HOMICIDE,
-    layers.ASSAULT,
-    layers.ROBBERY,
-    layers.SEX_OFFENSE,
-    layers.HeatMap,
-    layers.Districts
+    darkmap,
+    layers.HeatMap
   ]
 });
 
@@ -197,7 +192,7 @@ d3.json("/showData").then(function (data) {
 d3.json("/showData").then(function (data) {
 
   function sex_offenseType(sex_offense) {
-    return sex_offense.primary_type == "SEX_OFFENSE"
+    return sex_offense.primary_type == "SEX OFFENSE"
   }
   var crSex_offens = data.filter(sex_offenseType);
   // console.log(crSex_offens);
@@ -221,61 +216,61 @@ d3.json("/showData").then(function (data) {
 
 
  //icon filters
-var blueIcon = new L.Icon({
-	iconUrl: 'img/marker-icon-2x-blue.png',
-	shadowUrl: 'img/marker-shadow.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	popupAnchor: [1, -34],
-	shadowSize: [41, 41]
-});
+// var blueIcon = new L.Icon({
+// 	iconUrl: 'img/marker-icon-2x-blue.png',
+// 	shadowUrl: 'img/marker-shadow.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	popupAnchor: [1, -34],
+// 	shadowSize: [41, 41]
+// });
 
-var redIcon = new L.Icon({
-	iconUrl: 'img/marker-icon-2x-red.png',
-	shadowUrl: 'img/marker-shadow.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	popupAnchor: [1, -34],
-	shadowSize: [41, 41]
-});
+// var redIcon = new L.Icon({
+// 	iconUrl: 'img/marker-icon-2x-red.png',
+// 	shadowUrl: 'img/marker-shadow.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	popupAnchor: [1, -34],
+// 	shadowSize: [41, 41]
+// });
 
-var greenIcon = new L.Icon({
-	iconUrl: 'img/marker-icon-2x-green.png',
-	shadowUrl: 'img/marker-shadow.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	popupAnchor: [1, -34],
-	shadowSize: [41, 41]
-});
+// var greenIcon = new L.Icon({
+// 	iconUrl: 'img/marker-icon-2x-green.png',
+// 	shadowUrl: 'img/marker-shadow.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	popupAnchor: [1, -34],
+// 	shadowSize: [41, 41]
+// });
 
-var orangeIcon = new L.Icon({
-	iconUrl: 'img/marker-icon-2x-orange.png',
-	shadowUrl: 'img/marker-shadow.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	popupAnchor: [1, -34],
-	shadowSize: [41, 41]
-});
+// var orangeIcon = new L.Icon({
+// 	iconUrl: 'img/marker-icon-2x-orange.png',
+// 	shadowUrl: 'img/marker-shadow.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	popupAnchor: [1, -34],
+// 	shadowSize: [41, 41]
+// });
 
-var yellowIcon = new L.Icon({
-	iconUrl: 'img/marker-icon-2x-yellow.png',
-	shadowUrl: 'img/marker-shadow.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	popupAnchor: [1, -34],
-	shadowSize: [41, 41]
-});
+// var yellowIcon = new L.Icon({
+// 	iconUrl: 'img/marker-icon-2x-yellow.png',
+// 	shadowUrl: 'img/marker-shadow.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	popupAnchor: [1, -34],
+// 	shadowSize: [41, 41]
+// });
 
-var violetIcon = new L.Icon({
-	iconUrl: 'img/marker-icon-2x-violet.png',
-	shadowUrl: 'img/marker-shadow.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	popupAnchor: [1, -34],
-	shadowSize: [41, 41]
-});
+// var violetIcon = new L.Icon({
+// 	iconUrl: 'img/marker-icon-2x-violet.png',
+// 	shadowUrl: 'img/marker-shadow.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	popupAnchor: [1, -34],
+// 	shadowSize: [41, 41]
+// });
 
-//example ???????????
+//example
 // L.marker([51.5, -0.09], {icon: greenIcon}).addTo(myMap);
 
 // Create a control for our layers, add our overlay layers to it
