@@ -99,7 +99,7 @@ L.control.layers(baseMaps, overlays).addTo(myMap);
 // });
 
 
-//func to fillter the different crimes types
+//BATTERY Fillter
 d3.json("/showData").then(function (data) {
   // console.log(data);
 
@@ -110,48 +110,125 @@ d3.json("/showData").then(function (data) {
   var crBattery = data.filter(batteryType);
   // console.log(crBattery);
 
+  for (var i = 0; i < crBattery.length; i++) {
+    // console.log(crRobbery)
+    var lat = crBattery[i].latitude;
+    var lng = crBattery[i].longitude;
+    var type = crBattery[i].primary_type
+    var district = crBattery[i].district
+    var description = crBattery[i].description
+    // console.log(type)
+
+    var location = [lat,lng];
+    console.log(location);
+      L.marker(location)
+      .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+      .addTo(myMap);
+  };
+});
+
+
+// HOMICIDE Fillter
+d3.json("/showData").then(function (data) {
   function homiciedType(homicied) {
     return homicied.primary_type == "HOMICIDE"
   }
   var crHomicied = data.filter(homiciedType);
   // console.log(crHomicied);
 
+  for (var i = 0; i < crHomicied.length; i++) {
+    // console.log(crRobbery)
+    var lat = crHomicied[i].latitude;
+    var lng = crHomicied[i].longitude;
+    var type = crHomicied[i].primary_type
+    var district = crHomicied[i].district
+    var description = crHomicied[i].description
+    // console.log(type)
+
+    var location = [lat,lng];
+    // console.log(location);
+      // L.marker(location)
+      // .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+      // .addTo(myMap);
+  };
+});
+
+// ASSAULT Fillter 
+d3.json("/showData").then(function (data) {
   function assaultType(assault) {
     return assault.primary_type == "ASSAULT"
   }
   var crAssault = data.filter(assaultType);
   // console.log(crAssault);
 
+  for (var i = 0; i < crAssault.length; i++) {
+    // console.log(crRobbery)
+    var lat = crAssault[i].latitude;
+    var lng = crAssault[i].longitude;
+    var type = crAssault[i].primary_type
+    var district = crAssault[i].district
+    var description = crAssault[i].description
+    // console.log(type)
+
+    var location = [lat,lng];
+    // console.log(location);
+      // L.marker(location)
+      // .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+      // .addTo(myMap);
+  };
+});
+
+// ROBBERY FILLTER
+d3.json("/showData").then(function (data) {
   function robberyType(robbery) {
       
     return robbery.primary_type == "ROBBERY"
   }
+  // ROBBERY markers
   var crRobbery = data.filter(robberyType);
-  console.log(crRobbery);
+  // console.log(crRobbery);
 
     for (var i = 0; i < crRobbery.length; i++) {
       // console.log(crRobbery)
       var lat = crRobbery[i].latitude;
       var lng = crRobbery[i].longitude;
       var type = crRobbery[i].primary_type
-      console.log(type)
+      var district = crRobbery[i].district
+      var description = crRobbery[i].description
+      // console.log(type)
 
       var location = [lat,lng];
       // console.log(location);
-        L.marker(location)
-        .bindPopup("<h3>" + type +  "</h3> <hr> <h5>Coord " + location + "</h5>")
-        .addTo(myMap);
-
+        // L.marker(location)
+        // .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+        // .addTo(myMap);
     };
+  });
 
+// SEX_OFFENSE fillter 
+d3.json("/showData").then(function (data) {
 
   function sex_offenseType(sex_offense) {
     return sex_offense.primary_type == "SEX_OFFENSE"
   }
   var crSex_offens = data.filter(sex_offenseType);
-  // console.log(crSex_offens);
+  console.log(crSex_offens);
 
+  for (var i = 0; i < crSex_offens.length; i++) {
+    // console.log(crRobbery)
+    var lat = crSex_offens[i].latitude;
+    var lng = crSex_offens[i].longitude;
+    var type = crSex_offens[i].primary_type
+    var district = crSex_offens[i].district
+    var description = crSex_offens[i].description
+    console.log(type)
 
+    var location = [lat,lng];
+    // console.log(location);
+      L.marker(location)
+      .bindPopup("<h4>" + type +  "</h4> <hr> <h5>District:" + district + "</h5>" + "<h5>Description: " + description + "</h5>")
+      .addTo(myMap);
+  };
 });
 
 
