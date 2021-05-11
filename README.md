@@ -27,3 +27,8 @@ This repo contains a demonstration of web development to render a website that u
 1. Navigate back to the pgAdmin session that should still be running
 2. Run the `select` statement at the bottom of the SQL query form
 3. Notice that stats from the Chicago Crimes csv have been properly loaded into the corresponding table in the PostgreSQL DB and are available for analysis
+
+### Viewing the Website via Flask Server
+From the Gitbash or Terminal session mentioned in step 3 of Setup Instructions, run `python app.py` from the git repo on your local machine. This will launch a Flask server that can then be accessed from a Chrome browser window.
+
+Enjoy :)
