@@ -1,6 +1,10 @@
 # chicago-crime-stats
 
-#### Setup Instructions
+### Overview
+This repo contains a demonstration of web development to render a website that uses leaflet.js and plotly to analyze Chicago Crime statistics. The datasource used includes information such as date/time reported incidents occurred, location (block & coordinates), type of crime, description, and whether an arrest was made or not.
+
+### ETL Instructions
+#### Clone this repo
 1. Navigate to the [Chicago Crime Stats Repo](https://github.com/NHoyer95/chicago-crime-stats) and select the green "Code" dropdown
 2. Copy the SSH Key to your clipboard
 3. Open a Gitbash or Terminal from your desired file location and clone the repo using the git clone command, followed by the SSH Key from your clipboard - NOTE: Do not close this terminal
