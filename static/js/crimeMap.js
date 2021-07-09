@@ -348,12 +348,16 @@ function chooseColor(dist_num) {
 d3.json(link).then(function(data) {
   // Creating a geoJSON layer with the retrieved data
   L.geoJson(data, {
+    function(feature, latlng) {
+      return L.circleMarker(latlng);
+  },
     // Style each feature 
     style: function(features) {
       return {
         color: "white",
         // Call the chooseColor function to decide which color to color our district 
-        fillColor: chooseColor(features.properties.dist_num),
+        //fillColor: chooseColor(features.properties.dist_num),
+        fillColor:'red',
         fillOpacity: 0.5,
         weight: 1.5
       };
